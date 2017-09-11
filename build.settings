@@ -7,11 +7,11 @@ settings =
             
 		    MinimumOSVersion = "8.0",
 		    UIApplicationExitsOnSuspend = false,
-		    FacebookAppID = "1173822826028769",  -- Replace XXXXXXXXXX with your Facebook App ID
+		    FacebookAppID = "XXXXXXXXXX",  -- Replace XXXXXXXXXX with your Facebook App ID
 		    AccountKitClientToken = "1639bea3d5032241c103d04340e031f8", -- Replace XXXXXXXXXX with your Account Kit Client Token
 		    CFBundleURLTypes =
 		    {
-			{ CFBundleURLSchemes = { "ak1173822826028769", } }  -- Replace XXXXXXXXXX with your Facebook App ID
+			{ CFBundleURLSchemes = { "akXXXXXXXXXX", } }  -- Replace XXXXXXXXXX with your Facebook App ID
 		    },
 
             }
@@ -19,25 +19,17 @@ settings =
 	},
     android =
     {
-        applicationChildElements =
+        strings =
         {
-            -- Array of strings, Replace XXXXXXXXXX with your Facebook App ID
-            [[
-            <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
-               <intent-filter>
-                 <action android:name="android.intent.action.VIEW" />
-                 <category android:name="android.intent.category.DEFAULT" />
-                 <category android:name="android.intent.category.BROWSABLE" />
-                 <data android:scheme="ak1173822826028769" />
-              </intent-filter>
-            </activity>
-            ]],
+            ["ak_login_protocol_scheme"] = "akXXXXXXXXXX", -- Replace XXXXXXXXXX with your Facebook App ID
+            ["ACCOUNT_KIT_CLIENT_TOKEN"] = "XXXXXXXXXX", -- Replace XXXXXXXXXX with your Account Kit Token
         },
+    
     	usesPermissions =
     	{
         	"android.permission.INTERNET"
     	},
-        facebookAppId = "1173822826028769",  -- Replace XXXXXXXXXX with your Facebook App ID
+        facebookAppId = "XXXXXXXXXX",  -- Replace XXXXXXXXXX with your Facebook App ID
     },
     plugins =
     {
