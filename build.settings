@@ -8,7 +8,7 @@ settings =
 		    MinimumOSVersion = "8.0",
 		    UIApplicationExitsOnSuspend = false,
 		    FacebookAppID = "XXXXXXXXXX",  -- Replace XXXXXXXXXX with your Facebook App ID
-		    AccountKitClientToken = "1639bea3d5032241c103d04340e031f8", -- Replace XXXXXXXXXX with your Account Kit Client Token
+		    AccountKitClientToken = "XXXXXXXXXX", -- Replace XXXXXXXXXX with your Account Kit Client Token
 		    CFBundleURLTypes =
 		    {
 			{ CFBundleURLSchemes = { "akXXXXXXXXXX", } }  -- Replace XXXXXXXXXX with your Facebook App ID
@@ -22,9 +22,20 @@ settings =
         strings =
         {
             ["ak_login_protocol_scheme"] = "akXXXXXXXXXX", -- Replace XXXXXXXXXX with your Facebook App ID
-            ["ACCOUNT_KIT_CLIENT_TOKEN"] = "XXXXXXXXXX", -- Replace XXXXXXXXXX with your Account Kit Token
+            ["fbak_app_ak_token"] = "XXXXXXXXXX", -- Replace XXXXXXXXXX with your Account Kit Token
         },
-    
+        applicationChildElements =
+        {
+            -- Replace XXXXXXXXXX with your Facebook App ID
+            [[
+                <meta-data android:name="com.facebook.accountkit.ApplicationName"
+                android:value="Account Kit Demo" />
+                <provider
+                android:name="com.facebook.accountkit.internal.AccountKitInitProvider"
+                android:authorities="XXXXXXXXXX.AccountKitInitialization"
+                android:exported="false" />
+            ]],
+        },
     	usesPermissions =
     	{
         	"android.permission.INTERNET"
@@ -37,6 +48,11 @@ settings =
         {
             publisherId = "tech.scotth",
             
+        },
+        -- google sign in contains google auth which is required, it free, activate before using
+        ["plugin.googleSignIn"] =
+        {
+            publisherId = "tech.scotth",
         },
     },
 }
