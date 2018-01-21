@@ -23,6 +23,7 @@ settings =
         {
             ["ak_login_protocol_scheme"] = "akXXXXXXXXXX", -- Replace XXXXXXXXXX with your Facebook App ID
             ["fbak_app_ak_token"] = "XXXXXXXXXX", -- Replace XXXXXXXXXX with your Account Kit Token
+	    ["fbak_app_name"] = "App Name",
         },
         applicationChildElements =
         {
